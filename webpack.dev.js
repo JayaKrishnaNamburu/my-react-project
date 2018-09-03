@@ -1,4 +1,5 @@
 const merge = require('webpack-merge');
+const PrettierPlugin = require('prettier-webpack-plugin');
 const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
@@ -6,6 +7,7 @@ module.exports = merge(common, {
   devServer: {
     host: 'localhost',
     port: 3000,
-    open: true
-  }
-})
+    open: true,
+  },
+  plugins: [new PrettierPlugin()],
+});
