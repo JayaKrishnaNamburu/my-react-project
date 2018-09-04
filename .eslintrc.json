@@ -1,10 +1,36 @@
 {
-  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "extends": ["airbnb", "eslint-config-prettier"],
+  "plugins": ["eslint-plugin-prettier"],
   "rules": {
-    "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx"]}]
+    "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx"]}],
+    "react/jsx-no-bind": [
+      "error",
+      {
+        "allowArrowFunctions": true,
+        "allowBind": false,
+        "ignoreRefs": true
+      }
+    ],
+    "import/no-named-as-default": 0,
+    "react/no-did-update-set-state": "error",
+    "react/no-unknown-property": "error",
+    "react/no-unused-prop-types": "error",
+    "react/prop-types": "error",
+    "react/react-in-jsx-scope": "error",
+    "arrow-body-style": [2, "as-needed"],
+    "indent": [
+      2,
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ]
   },
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
+    "jest": true,
+    "es6": true
   }
 }
